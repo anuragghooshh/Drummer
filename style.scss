@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+$Darkest : #2C3639;
+$Dark : #3F4E4F;
+$Light : #A27B5C;
+$Lightest : #DCD7C9;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.container{
+    background-color: $Darkest;
+    min-height: 100vh;
+    max-height: 100vh;
+    padding: 2em 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2em;
+    h1{
+        font-size: 4.768rem;
+        font-family: 'Great Vibes', cursive;
+        color: $Lightest;
+        text-align: center;
+        font-weight: lighter;
+    }
+    >div{
+        overflow:visible;
+        display: flex;
+        justify-content: space-between;
+        img{
+            width: 15vw;
+            transform: scale(100%);
+            transition: 0.1s ease-in-out;
+            cursor: pointer;
+        }
+        img:hover{
+            transform: scale(102%);
+            transition: 0.1s ease-in-out;
+        }
+        img.active{
+            transform: scale(102%);
+            transition: 0.1s ease-in-out;
+        }
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 10em;
+        }
+    }
+}
+// Responsiveness (Tablet)----->
+@media only screen and (max-width:868px) and (min-width:481px){
+    .container{
+        div{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            text-align: center;
+            gap: 0.5em;
+            align-self: center;
+            img{
+                width: 20vw;
+                grid-column: span 2;
+            }
+            img:nth-last-child(1):nth-child(odd){
+                grid-column: 2 / span 2;
+            }
+        }
+    }
+}
+
+// Responsiveness (Smartphones)----->
+@media only screen and (max-width: 480px){
+    .container{
+        h1{
+            font-size: 3.052rem;
+        }
+        div{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 0.5em;
+            align-self: center;
+            img{
+                width: 30vw;
+                grid-column: span 2;
+            }
+            img:nth-last-child(1):nth-child(odd){
+                grid-column: 2 / span 2;
+            }
+        }
+    }
+}
