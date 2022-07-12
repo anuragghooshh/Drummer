@@ -8,6 +8,7 @@ $Lightest : #DCD7C9;
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
+    user-select: none;
 }
 .container{
     background-color: $Darkest;
@@ -28,19 +29,24 @@ $Lightest : #DCD7C9;
     >div{
         overflow:visible;
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5em;
         img{
-            width: 15vw;
+            flex: 0 0 calc(15% - 15px);
+            width: 95%;
             transform: scale(100%);
             transition: 0.1s ease-in-out;
             cursor: pointer;
         }
         img:hover{
             transform: scale(102%);
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.588));
             transition: 0.1s ease-in-out;
         }
         img.active{
             transform: scale(102%);
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.588));
             transition: 0.1s ease-in-out;
         }
     }
@@ -56,17 +62,11 @@ $Lightest : #DCD7C9;
 @media only screen and (max-width:868px) and (min-width:481px){
     .container{
         div{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            text-align: center;
             gap: 0.5em;
             align-self: center;
             img{
-                width: 20vw;
-                grid-column: span 2;
-            }
-            img:nth-last-child(1):nth-child(odd){
-                grid-column: 2 / span 2;
+                flex: 0 0 calc(25% - 20px);
+                width: 100%;
             }
         }
     }
@@ -79,16 +79,11 @@ $Lightest : #DCD7C9;
             font-size: 3.052rem;
         }
         div{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
             gap: 0.5em;
             align-self: center;
             img{
-                width: 30vw;
-                grid-column: span 2;
-            }
-            img:nth-last-child(1):nth-child(odd){
-                grid-column: 2 / span 2;
+                flex: 0 0 calc(55% - 35px);
+                width: 100%;
             }
         }
     }
