@@ -120,8 +120,8 @@
   }
   .container div img {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(55% - 35px);
-            flex: 0 0 calc(55% - 35px);
+        -ms-flex: 0 0 calc(40% - 25px);
+            flex: 0 0 calc(40% - 25px);
     width: 100%;
   }
 }
